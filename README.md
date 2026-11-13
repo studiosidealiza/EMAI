@@ -27,3 +27,16 @@ Nunca inclua `.env.local`, dados de participantes ou chaves em commits.
 Início, apresentação institucional, guia original em PDF, fórum editorial, solicitação de oficinas, inscrições em vagas extras, login por código, painel administrativo, decisões com justificativa e e-mail, edição de menus/conteúdo, troca verificada de e-mail e link de download do GitHub.
 
 O fórum é um mural de publicações administrativas. Não há comentários públicos, contas de participantes ou pagamentos. O repositório GitHub e a hospedagem precisam ser conectados às contas da instituição.
+
+## Equipe
+
+<table>
+  <tr>
+    <td align="center" width="150"><img src="docs/equipe/cibelly-lavor.png" width="110" height="110" alt="Cibelly Lavor" /><br /><strong>Cibelly Lavor</strong></td>
+    <td align="center" width="150"><img src="docs/equipe/helionardo-mendes.png" width="110" height="110" alt="Helionardo Mendes" /><br /><strong>Helionardo Mendes</strong></td>
+    <td align="center" width="150"><img src="docs/equipe/herbert-davi.png" width="110" height="110" alt="Herbert Davi" /><br /><strong>Herbert Davi</strong></td>
+    <td align="center" width="150"><img src="docs/equipe/napoleao.png" width="110" height="110" alt="Napoleão" /><br /><strong>Napoleão</strong></td>
+    <td align="center" width="150"><img src="docs/equipe/roberto-romulo.png" width="110" height="110" alt="Roberto Romulo" /><br /><strong>Roberto Romulo</strong></td>
+    <td align="center" width="150"><img src="docs/equipe/lucas.svg" width="110" height="110" alt="Lucas — sem foto" /><br /><strong>Lucas</strong></td>
+  </tr>
+</table>
