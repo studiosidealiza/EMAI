@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { publicData } from '@/lib/data';
-import { defaultContent } from '@/lib/content';
+import { defaultContent, publicSettings } from '@/lib/content';
 import { AppError, text, uuid, settingsInput } from '@/lib/validation';
 import { assertOrigin, session, requestCode, verifyCode, rateLimit, hash, SESSION_COOKIE } from '@/lib/auth';
 import { createWorkshop, enroll, decide, notifyDecision } from '@/lib/workshops';
@@ -33,7 +33,7 @@ async function handle(request, context) {
           sql`SELECT * FROM posts ORDER BY created_at DESC LIMIT 1000`,
           sql`SELECT id,recipient,subject,status,attempts,created_at FROM outbox ORDER BY created_at DESC LIMIT 100`
         ]);
-        return reply({ settings, workshops, enrollments, posts, outbox });
+        return reply({ settings: { ...settings, content: publicSettings(settings) }, workshops, enrollments, posts, outbox });
       }
       throw new AppError('Página não encontrada.', 404);
     }

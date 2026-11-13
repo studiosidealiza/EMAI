@@ -13,7 +13,7 @@ export default function Shell({ content, children }) {
       <Link href="/" className="brand" aria-label="EMAI — início"><img src="/logo.svg" alt="EMAI"/><span>Educação Midiática e<br/>Aprendizagem Informacional</span></Link>
       <button className="icon-button mobile-menu" onClick={()=>setOpen(!open)} aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open}><Icon name={open?'close':'menu'}/></button>
       <nav aria-label="Menu principal" className={open?'navigation open':'navigation'}>
-        {content.menus.filter(m=>m.visible).map(m=><Link key={m.id} href={m.href} onClick={()=>setOpen(false)} className={`${path === m.href ? 'active' : ''} ${m.id==='workshops'?'nav-cta':''}`} aria-current={path===m.href?'page':undefined}>{m.label}{m.id==='workshops'&&<Icon name="diagonal" size={16}/>}</Link>)}
+        {content.menus.filter(m=>m.visible).map(m=><Link key={m.id} href={m.href} onClick={()=>setOpen(false)} className={path === m.href ? 'active' : ''} aria-current={path===m.href?'page':undefined}>{m.label}</Link>)}
       </nav>
     </div></header>
     <main id="conteudo">{children}</main>

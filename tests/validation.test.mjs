@@ -24,11 +24,11 @@ test('Valida limites inteiros, inclusive zero vagas extras',()=>{
   for(const value of [-1,501,1.5,'',null,true])assert.throws(()=>integer(value,'Vagas',0,500));
 });
 test('Configurações bloqueiam links externos maliciosos e menus inconsistentes',()=>{
-  assert.equal(settingsInput(defaultContent,defaultContent).menus.length,5);
+  assert.equal(settingsInput(defaultContent,defaultContent).menus.length,4);
   for(const githubUrl of ['javascript:alert(1)','https://github.com.evil.org/a/b','https://github.com/a/b/issues'])
     assert.throws(()=>settingsInput({...defaultContent,githubUrl},defaultContent));
   assert.throws(()=>settingsInput({...defaultContent,menus:defaultContent.menus.map(m=>({...m,visible:false}))},defaultContent));
-  assert.throws(()=>settingsInput({...defaultContent,menus:Array(5).fill(defaultContent.menus[0])},defaultContent));
+  assert.throws(()=>settingsInput({...defaultContent,menus:Array(4).fill(defaultContent.menus[0])},defaultContent));
 });
 test('Destinos dos menus são fixos mesmo se o cliente tentar alterá-los',()=>{
   const menus=defaultContent.menus.map(m=>({...m,href:'https://example.org'}));

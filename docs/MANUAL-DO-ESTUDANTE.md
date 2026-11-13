@@ -181,6 +181,8 @@ Os links abrem em outra aba com `target="_blank"` e `rel="noopener noreferrer"`.
 
 ## 8. Menus e novas páginas
 
+A navbar contém Início, Guia educativo, Fórum e Oficinas. Todos usam o mesmo estilo de link textual em `components/Shell.js`, sem botão ou ícone exclusivo para Oficinas. O item O projeto foi removido da navegação; a seção institucional continua na página inicial. `publicSettings()` filtra o antigo menu `about` ao carregar configurações existentes, tanto no site público quanto no painel, preservando os demais rótulos, a ordem e a visibilidade.
+
 Em **/admin → Configurações**, é possível alterar nomes, visibilidade e ordem dos menus. Os destinos continuam associados às páginas correspondentes. Deve permanecer pelo menos um menu visível.
 
 Ocultar um item remove apenas o link da navegação; a página continua acessível pelo endereço.
