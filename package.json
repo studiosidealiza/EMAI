@@ -1,0 +1,29 @@
+{
+  "name": "emai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "db:setup": "node --env-file-if-exists=.env.local scripts/setup-db.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "docs:update": "node scripts/docs.mjs --write",
+    "docs:check": "node scripts/docs.mjs",
+    "check": "npm run test && npm run docs:check && npm run build"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "postgres": "^3.4.7",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@electric-sql/pglite-socket": "^0.2.19"
+  }
+}

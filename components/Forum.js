@@ -1,0 +1,10 @@
+'use client';
+import { useState } from 'react';
+import Icon from './Icon';
+import { Empty,DateLabel } from './ui';
+export default function Forum({ posts,available }) {
+  const [search,setSearch]=useState(''),[category,setCategory]=useState('Todas');
+  const categories=['Todas',...new Set(posts.map(p=>p.category))];
+  const visible=posts.filter(p=>(category==='Todas'||p.category===category)&&`${p.title} ${p.body}`.toLocaleLowerCase('pt-BR').includes(search.toLocaleLowerCase('pt-BR')));
+  return <section className="container section forum-layout"><aside className="forum-sidebar"><span className="eyebrow">EXPLORE O FÓRUM</span><div className="category-list">{categories.map(c=><button className={c===category?'selected':''} key={c} onClick={()=>setCategory(c)}>{c}<span>{c==='Todas'?posts.length:posts.filter(p=>p.category===c).length}</span></button>)}</div><div className="sidebar-note"><Icon name="chat" size={24}/><p>Publicações da equipe EMAI, abertas para toda a comunidade.</p></div></aside><div><label className="search-input"><Icon name="search"/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Buscar uma publicação" aria-label="Buscar uma publicação"/></label>{!available&&<div className="notice warning">Não foi possível carregar as publicações. Tente novamente mais tarde.</div>}{visible.length?<div className="forum-posts">{visible.map(post=><article className="forum-post" key={post.id} id={post.id}><div className="post-heading"><span className="badge">{post.category}</span><DateLabel value={post.created_at}/></div><h2>{post.title}</h2><div className="post-author"><span className="author-avatar">E</span><span>Equipe EMAI <span className="verified" title="Publicação oficial">✓</span></span></div><p className="post-body">{post.body}</p></article>)}</div>:<Empty icon="chat" title={posts.length?'Nenhuma publicação encontrada':'As próximas novidades chegam por aqui.'}>{posts.length?'Tente outra palavra ou categoria.':'Assim que a equipe publicar, os conteúdos aparecerão neste espaço.'}</Empty>}</div></section>;
+}
