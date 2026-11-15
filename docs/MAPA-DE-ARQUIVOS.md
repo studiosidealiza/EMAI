@@ -22,6 +22,8 @@ Inventário gerado por npm run docs:update. As funções de cada arquivo são ex
 | components/Admin.js | js |
 | components/Forum.js | js |
 | components/Icon.js | js |
+| components/Logo.js | js |
+| components/LogoLoader.js | js |
 | components/Shell.js | js |
 | components/Workshops.js | js |
 | components/ui.js | js |

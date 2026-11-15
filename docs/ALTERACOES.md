@@ -36,3 +36,9 @@
 - Removida a faixa azul superior com o nome da universidade e o texto de extensão.
 - Removida a faixa com Pensamento crítico, Segurança online, Cidadania digital e Conhecimento acessível.
 - Removidos os estilos exclusivos e atualizada a documentação.
+
+## 2026-11-15 — Logo animada e indicador de carregamento
+- Criados Logo e LogoLoader a partir dos traçados originais.
+- Hover/foco anima apenas os arcos do Wi-Fi, com degradê e aumento de 1%.
+- Carregamento de rotas e da administração usa logo grande centralizada, vazada e com preenchimento ascendente.
+- Atualizados estilos responsivos e alternativa para movimento reduzido.

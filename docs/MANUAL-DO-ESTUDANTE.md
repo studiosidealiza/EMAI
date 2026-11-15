@@ -455,3 +455,10 @@ A seção Equipe usa uma tabela HTML com imagens em docs/equipe/. Os PNGs têm f
 
 ### Estrutura visual sem faixas auxiliares
 O cabeçalho começa diretamente na navbar, em components/Shell.js. A faixa superior da universidade foi removida. Na home, app/page.js passa da abertura para a seção institucional, sem a faixa intermediária dos quatro temas. As regras CSS exclusivas dessas duas faixas também foram removidas.
+
+### Logo interativa e carregamento
+components/Logo.js renderiza os traçados do SVG original inline, preservando a geometria. Os índices 0, 1, 2 e 5 representam as letras; 3, 4 e 6 são os arcos do Wi-Fi. No hover ou foco do link, somente os arcos recebem um degradê animado (azul, turquesa e violeta) e escala 1.01. As letras mantêm cor e tamanho. Cada instância usa useId para evitar conflito entre gradientes e recortes.
+components/LogoLoader.js centraliza a logo grande em tela cheia. app/loading.js utiliza esse indicador durante o carregamento de rotas; components/Admin.js o reutiliza na consulta inicial da sessão. O contorno fica vazado e um clipPath revela o preenchimento de baixo para cima em ciclos de 2,8 segundos. É um indicador de espera, sem medição percentual; desaparece quando o conteúdo fica disponível, sem atraso artificial.
+Os estilos estão no bloco Logo de app/globals.css. Altere os keyframes logo-color para ajustar as cores e logo-fill-up para ajustar o preenchimento. prefers-reduced-motion remove o movimento e mantém a logo parcialmente preenchida. A logo inline substitui as imagens de marca em Shell, Admin e na arte da home. public/logo.svg continua disponível como referência original.
+
+As instâncias sobre fundos escuros preservam as letras brancas; no cabeçalho e rodapé claros, as letras continuam azul-marinho. O efeito de degradê atua somente no Wi-Fi em ambos os contextos.
