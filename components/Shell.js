@@ -8,7 +8,6 @@ export default function Shell({ content, children }) {
   const path = usePathname(), [open, setOpen] = useState(false);
   return <>
     <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div className="university-bar"><div className="container"><span>UNIVERSIDADE FEDERAL DO CEARÁ</span><span>Extensão que aproxima.</span></div></div>
     <header className="site-header"><div className="container nav-wrap">
       <Link href="/" className="brand" aria-label="EMAI — início"><img src="/logo.svg" alt="EMAI"/><span>Educação Midiática e<br/>Aprendizagem Informacional</span></Link>
       <button className="icon-button mobile-menu" onClick={()=>setOpen(!open)} aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open}><Icon name={open?'close':'menu'}/></button>

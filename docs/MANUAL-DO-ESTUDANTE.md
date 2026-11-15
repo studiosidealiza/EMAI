@@ -443,3 +443,15 @@ Essa checagem identifica documentação pendente, mas não avalia a precisão do
 ### Verificações da implementação
 
 Os sete testes de validação e os dez cenários de integração passaram. A integração usa a porta local 55439; deixe-a livre ao executar npm test. Os e-mails são interceptados somente pelo teste, sem envio externo.
+
+### Configuração local e publicação
+A conexão local é definida em .env.local, arquivo ignorado pelo Git. Após preencher DATABASE_URL, execute npm run db:setup para preparar as tabelas. A configuração local não transfere automaticamente variáveis para a Vercel: confira DATABASE_URL, AUTH_SECRET, APP_URL e as variáveis de envio de e-mail no ambiente de produção. Nunca copie valores de credenciais para este manual.
+
+### Envio administrativo em desenvolvimento
+RESEND_API_KEY e EMAIL_FROM foram configurados no ambiente local e o envio foi aceito pelo provedor. O remetente de testes do Resend permite enviar à conta autorizada pelo serviço. Para responder a instituições e participantes com outros endereços, configure um domínio verificado. Após alterar .env.local, reinicie o servidor. Os códigos de teste não devem ser usados para entrar: solicite um novo em /admin para que o navegador mantenha o identificador da solicitação.
+
+### Equipe no README
+A seção Equipe usa uma tabela HTML com imagens em docs/equipe/. Os PNGs têm fundo transparente e recorte circular incorporado, sem depender de CSS no GitHub. A ordem é Cibelly Lavor, Helionardo Mendes, Herbert Davi, Napoleão, Roberto Romulo e Lucas. Lucas usa apenas a inicial em SVG, sem fotografia. Para atualizar a equipe, substitua a imagem e ajuste nome, caminho e texto alternativo no README. Essa seção pertence à documentação do repositório.
+
+### Estrutura visual sem faixas auxiliares
+O cabeçalho começa diretamente na navbar, em components/Shell.js. A faixa superior da universidade foi removida. Na home, app/page.js passa da abertura para a seção institucional, sem a faixa intermediária dos quatro temas. As regras CSS exclusivas dessas duas faixas também foram removidas.
