@@ -1,3 +1,4 @@
+import Logo from '@/components/Logo';
 import Link from 'next/link';
 import Shell from '@/components/Shell';
 import Icon from '@/components/Icon';
@@ -8,7 +9,7 @@ export default async function Home() {
   const { content, posts, available } = await pageData();
   return <Shell content={content}>
     <section className="hero"><div className="container hero-grid"><div className="hero-copy"><div className="eyebrow"><span/>EDUCAÇÃO MIDIÁTICA · UFC</div><h1>{content.heroTitle}</h1><p>{content.heroDescription}</p><div className="hero-actions"><Link className="button primary" href="/oficinas">Participe de uma oficina <Icon name="diagonal" size={18}/></Link><Link className="text-link" href="/guia">Explore o nosso guia <Icon name="arrow" size={17}/></Link></div><div className="hero-note"><span className="tiny-orbit"/><span>Da universidade para a sua comunidade.</span></div></div>
-    <div className="hero-art" aria-label="Antes de compartilhar, questione. Uma ideia do EMAI."><div className="art-grid"/><span className="art-top">UM NOVO OLHAR PARA O DIGITAL</span><div className="signal signal-one"/><div className="signal signal-two"/><div className="signal signal-three"/><span className="art-spark">✳</span><div className="art-message">Antes de<br/>compartilhar,<br/><em>questione.</em></div><div className="art-bottom"><img src="/logo.svg" alt=""/><span>Conexões conscientes.<br/>Transformações reais.</span></div><div className="art-label"><span/>PENSAMENTO CRÍTICO EM REDE</div></div>
+    <div className="hero-art" aria-label="Antes de compartilhar, questione. Uma ideia do EMAI."><div className="art-grid"/><span className="art-top">UM NOVO OLHAR PARA O DIGITAL</span><div className="signal signal-one"/><div className="signal signal-two"/><div className="signal signal-three"/><span className="art-spark">✳</span><div className="art-message">Antes de<br/>compartilhar,<br/><em>questione.</em></div><div className="art-bottom"><Logo decorative /><span>Conexões conscientes.<br/>Transformações reais.</span></div><div className="art-label"><span/>PENSAMENTO CRÍTICO EM REDE</div></div>
     </div></section>
     <section className="section container about-section" id="projeto"><div><div className="eyebrow"><span/>CONHEÇA O EMAI</div><h2>Entender o digital.<br/><span className="muted-heading">Transformar o cotidiano.</span></h2></div><div className="about-copy"><p>{content.about}</p><p>{content.mission}</p><a className="text-link" href="#caminhos">Conheça nossos caminhos <Icon name="arrow" size={18}/></a></div></section>
     <section className="container pathways" id="caminhos">{[
